@@ -25,7 +25,7 @@ struct {
 } __attribute__((packed)) config = {
 	.cell = {
 		.signature = JAILHOUSE_CELL_DESC_SIGNATURE,
-		.name = "ivshmem-demo",
+		.name = "ivshmem-demo-2",
 		.flags = JAILHOUSE_CELL_PASSIVE_COMMREG,
 
 		.cpu_set_size = sizeof(config.cpus),
@@ -37,12 +37,12 @@ struct {
 	},
 
 	.cpus = {
-		0b0100,
+		0b1000,
 	},
 
 	.mem_regions = {
 		/* RAM */ {
-			.phys_start = 0x3f000000,
+			.phys_start = 0x3f100000,
 			.virt_start = 0,
 			.size = 0x00100000,
 			.flags = JAILHOUSE_MEM_READ | JAILHOUSE_MEM_WRITE |
